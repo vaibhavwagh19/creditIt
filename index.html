@@ -3,72 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit It</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
     
     <style>
         body{
             margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            
+            font-family: 'Fuzzy Bubbles', cursive;
         }
-        /* nav{
-            background-color: #fddb27;
-            color: #000;
-            border: 2px solid black;
-            height: 107px;
-        } */
+        
+/* header */
         *{transition:all 0.3s ease-in-out;}
         .container{
-            height: 107px;
+            
+            height: auto;
             margin: 0;
             clear:both;
             overflow:auto;
             background-color: #f2de7a;
             border: 2px solid black;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
         }
         .logo img{
-            margin: 20px;
-            max-width: 90px;
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             float:left;
-        }
-        ul li{
-            display: inline-block; 
-            padding:10px;
-            font-size:15px; 
-        }
-        nav{
-            margin: 0;
-            float:right;
+            width: 60%;
+            height: auto;
+            min-width: 40px;
+            max-width: 600px;
         }
         .aboutus{
             border: 2px solid black;
-            padding: 15px;
             border-radius:10px;
-            font-size: 14px;
-            text-transform: uppercase;    
+            margin-left: 10px;
+            margin-bottom: 10px;
+            width: 161px;
+            height: 63px;
+            flex-shrink: 0;
+            padding: 15px;
+            font-size: 18px;
+            text-transform: uppercase;   
         }
         .contactus{
-            padding: 15px;
             border: 2px solid black;
             border-radius:10px;
-            font-size: 14px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            width: 161px;
+            height: 63px;
+            flex-shrink: 0;
+            padding: 15px;
+            font-size: 18px;
             text-transform: uppercase;
         }
-        @media screen and (max-width: 400px) {
-            nav li {
-                float: none;
-            }
-        }
-
-
+        
+/* middle container */
         .middle{
-            height: 735px;
+            height: auto;
+            min-height: 650px;
             top: 107px;
             color: rgba(0, 0, 0, 1);
             border-top: 2px solid rgba(0, 0, 0, 1);
             background-image: url("background-image.png");
             width: 100%;
-            height: 742px;
             background-repeat: no-repeat;
             background-size: 100% 800px;
             
@@ -79,7 +84,6 @@
         .context{
             color: #030000;
             text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 40px;
             font-style: normal;
             font-weight: 400;
@@ -91,34 +95,42 @@
         }
 
         .mbuttons{
+            
             display: flex;
             margin-top: 20px;
+            flex-wrap: wrap;
             .create{
-                border: 2px solid black;
-                width: 30%;
+                border: 5px solid rgba(5, 213, 88, 1);  
+                width: 268px;
+                height: 63px;
+                flex-shrink: 0;
                 padding: 10px;
                 margin: 20px;
-                border-radius:10px;
+                border-radius:25px;
                 font-size: 18px;
                 text-transform: uppercase;
             }
             .login{
-                border: 2px solid black;
-                width: 20%;
+                border: 5px solid rgba(34, 0, 242, 1);
+                border-radius:25px;
+                width: 161px;
+                height: 63px;
+                flex-shrink: 0;
                 padding: 15px;
                 margin: 20px;
-                border-radius:10px;
                 font-size: 18px;
                 text-transform: uppercase;
             }
         }
         button{
-            background-color: #f2de7a;
+            background-color: #fff;
+            font-family: 'Fuzzy Bubbles', cursive;
         }
         button:hover {
             /* letter-spacing: 2px; */
             background-color: hsl(261deg 80% 48%);
             color: hsl(0, 0%, 100%);
+            cursor: pointer;
         }
         button:active {
             /* letter-spacing: 1px; */
@@ -127,53 +139,39 @@
             box-shadow: rgb(114, 43, 247) 0px 0px 0px 0px;
             transition: 100ms;
         }
-
-
-        /* footer{
-            margin: 0;
-            background: rgba(182, 161, 158, 0.5);
-            color: rgba(0, 0, 0, 1);
-            border: 3px solid black;
-            height: 182px;
-            
-        }
-        .footerflex{
-            font-size: 20px;
-            display: flex;
-            .footerlogo{
-                margin-left:30px ;
-                margin-top: 5px;
-            }
-            .footercontact{
-                margin-top: 5px;
-                
-            }
-        } */
+/* footer */
         .fcontainer{
-            
+            display: flex;
             clear:both;
             overflow:auto;
             border: 2px solid black;
-            height: 182px;
+            height: auto;
             margin: 0;
             background: rgba(182, 161, 158, 0.5);
             color: rgba(0, 0, 0, 1);
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-        .fcontainer nav{
-            float:right;
-        }
+        
         .flogo img{
             margin-left: 20px;
-            margin-top: 40px;
-            max-width: 90px;
+            margin-top: 20px;
             float:left;
+            width: 60%;
+            height: auto;
+            min-width: 40px;
+            max-width: 600px;
+            
         }
-        .fcontainer li{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        .fcontainer nav{
+            /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
             display: inline-block; 
             padding:10px;
-            font-size:20px; 
+            font-size:20px;
+            margin-left: 10px;
+            margin-top: 10px; 
             margin-right: 30px;
+            /* margin-bottom: 10px; */
         }
     </style>
 </head>
@@ -181,42 +179,37 @@
 <!-- navigation bar -->
     <div class="container">
         <div class="logo" onclick="">
-            <img src="back.jpeg" alt="logo" width="100" />
+            <a href="#"><img src="logo.png" alt="logo" width="100" /></a>
         </div>
         <nav>
-            <ul>
-                <li><button class="aboutus">About Us</button></li>
-                <li><button class="contactus">Contact Us</button></li>
-            </ul>
+            <button class="aboutus" onclick="">About Us</button>
+            <button class="contactus" onclick="">Contact Us</button>
         </nav>
     </div>
     
 <!-- middle part of html page -->
     <div class="middle">
         <div class="context">
-            "Smart India ka, 
-            Smart Udhar Bahi Khata!
+            "Smart India ka, <br>
+            Smart Udhar Bahi Khata!<br>
             Rakhe udhar-darj, bhugtan-raji ki 
-            khabar.
+            khabar.<br>
             Asaan aur tez, payment ka safar."
         </div>
         <div class="mbuttons">
-            <button class="create">Create Account</button>
-            <button class="login">Log In</button>
+            <button class="create" onclick="">Create Account</button>
+            <button class="login" onclick="">Log In</button>
         </div>
     </div>
 <!-- footer -->
     <div class="fcontainer">
         <div class="flogo">
-            <img src="back.jpeg" alt="flogo" width="100"/>
+            <a href="#"><img src="logo.png" alt="flogo" /></a>
             </div>
         <nav>
-            <ul>
-                <li>Contact Us
-                    <br>☎ +91 000 000 0000
-                    <br>&#9993; creditit@gmail.com
-                </li>
-            </ul>
+            Contact Us
+            <br>☎ +91 000 000 0000
+            <br>&#9993; creditit@gmail.com
         </nav>
     </div>
 </body>
