@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
     
     <style>
+        html{
+            scroll-behavior:smooth;
+        }
         body{
             margin: 0;
             font-family: 'Fuzzy Bubbles', cursive;
@@ -166,7 +169,7 @@
             max-width: 600px;
             
         }
-        .fcontainer nav{
+        .nav{
             /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
             display: inline-block; 
             padding:10px;
@@ -197,12 +200,12 @@
 
 <!-- navigation bar -->
     <div class="container">
-        <div class="logo" onclick="">
-            <a href="https://vaibhavwagh19.github.io/creditIt/"><img src="logo.png" alt="logo" width="100" /></a>
+        <div class="logo" >
+            <a href=""><img src="logo.png" alt="logo" width="100" /></a>
         </div>
         <nav>
             <button class="aboutus" onclick="window.location.href='aboutus-page-yet-to-be-added';">About Us</button>
-            <button class="contactus" onclick="window.location.href='contactus-page-yet-to-be-added';">Contact Us</button>
+            <button class="contactus" onclick="window.location.href='#contact';">Contact Us</button>
         </nav>
     </div>
     
@@ -216,20 +219,20 @@
             Asaan aur tez, payment ka safar."
         </div>
         <div class="mbuttons">
-            <button class="create" onclick="window.location.href='https://samyaksam-12.github.io/'; ">Create Account</button>
-            <button class="login" onclick="window.location.href='https://vanshharode.github.io/';" >Log In</button>
+            <button class="create" onclick="window.location.href=''; ">Create Account</button>
+            <button class="login" onclick="window.location.href=''; " >Log In</button>
         </div>
     </div>
 <!-- footer -->
     <div class="fcontainer">
         <div class="flogo">
-            <a href="https://vaibhavwagh19.github.io/creditIt/"><img src="logo.png" alt="flogo" /></a>
+            <a href=""><img src="logo.png" alt="flogo" /></a>
             </div>
-        <nav>
+        <div class="nav" id="contact">
             Contact Us
             <a href="tel:+918446648561"><br>☎ +91 000 000 0000</a>
             <a href="mailto:creditit@gmail.com? subject:Contact Mail"><br>&#9993; creditit@gmail.com</a>
-        </nav>
+        </div>
     </div>
 </body>
 </html>
