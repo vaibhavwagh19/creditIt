@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Credit_It | Easy And Safe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
     
     <style>
         html{
-            scroll-behavior:smooth;
+            scroll-behavior: smooth;
         }
         body{
             margin: 0;
@@ -41,6 +41,7 @@
             height: auto;
             min-width: 40px;
             max-width: 600px;
+            mix-blend-mode: multiply;
         }
         .aboutus{
             border: 2px solid black;
@@ -75,10 +76,11 @@
             top: 107px;
             color: rgba(0, 0, 0, 1);
             border-top: 2px solid rgba(0, 0, 0, 1);
-            background-image: url("background-image.png");
+            background-image: url("images/background-image.png");
             width: 100%;
             background-repeat: no-repeat;
-            background-size: 100% 800px;
+            background-position: right ;
+            
             
             /* image fixing8*/
             /*background-attachment: fixed; */
@@ -102,8 +104,8 @@
             display: flex;
             margin-top: 20px;
             flex-wrap: wrap;
-            .create{
-
+            .create
+            {
                 border: 5px solid rgba(5, 213, 88, 1);  
                 width: 268px;
                 height: 63px;
@@ -115,7 +117,8 @@
                 text-transform: uppercase;
                 color: rgba(5, 213, 88, 1);
             }
-            .login{
+            .login
+            {
                 border: 5px solid rgba(34, 0, 242, 1);
                 border-radius:25px;
                 width: 161px;
@@ -167,7 +170,7 @@
             height: auto;
             min-width: 40px;
             max-width: 600px;
-            
+            mix-blend-mode: multiply;
         }
         .nav{
             /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
@@ -200,8 +203,8 @@
 <body>
 <!-- navigation bar -->
     <div class="container">
-        <div class="logo" >
-            <a href=""><img src="logo.png" alt="logo" width="100" /></a>
+        <div class="logo" onclick="">
+            <a href="index.html"><img src="images/logo.png" alt="logo" width="100" /></a>
         </div>
         <nav>
             <button class="aboutus" onclick="window.location.href='aboutus-page-yet-to-be-added';">About Us</button>
@@ -219,14 +222,18 @@
             Asaan aur tez, payment ka safar."
         </div>
         <div class="mbuttons">
-            <button class="create" onclick="window.location.href=''; ">Create Account</button>
-            <button class="login" onclick="window.location.href=''; " >Log In</button>
+            <a href="create.html">
+                <button class="create">Create Account</button>
+            </a>
+            <a href="login.html">
+                <button class="login">Log In</button>
+            </a>
         </div>
     </div>
 <!-- footer -->
     <div class="fcontainer">
         <div class="flogo">
-            <a href=""><img src="logo.png" alt="flogo" /></a>
+            <a href="index.html"><img src="./images/logo.png" alt="flogo" /></a>
             </div>
         <div class="nav" id="contact">
             Contact Us

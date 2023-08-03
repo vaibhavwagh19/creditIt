@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Costomer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fuzzy Bubbles', cursive;
+        }
+
+        .hero{
+            width: 100%;
+            /* background-image: url("images/together.png");
+            background-repeat: no-repeat;
+            align-items: center;
+            background-position: left; */
+        }
+        .mart-name{
+            margin: 5px;
+            color: #000000;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        nav{
+            background: #f2de7a;
+            width: 100%;
+            padding: 10px 2%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border: 2px solid black;
+        }
+        .logo{
+            width: 15%;
+            min-width: 120px;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+        .circle{
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .user-pic{
+            /* width: 40px;
+            border-radius: 50%;
+            margin-left: 30px; */
+            cursor: pointer;
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        nav ul{
+            width: 100%;
+            text-align: right;
+        }
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+        nav ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .sub-menu-wrap{
+            position: absolute;
+            top: 100%;
+            right: 3%;
+            width: 320px;
+            max-height:0px;
+            overflow: hidden;
+            transition: max-height ;
+        }
+        .sub-menu-wrap.open-menu{
+            max-height: 400px;
+            overflow: visible;
+        }
+        .sub-menu{
+            background: #fff;
+            padding: 20px;
+            margin:10px;
+            border-radius: 15px;
+            border: 1px solid #303030;
+        }
+        .user-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .user-info h3{
+            font-weight: 500;
+        }
+        .user-info img{
+            width: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .sub-menu hr{
+            border: 0;
+            height: 2px;
+            width: 100%;
+            background: #ccc;
+            margin: 15px 0 10px;
+        }
+        .sub-menu-link{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+        }
+        .sub-menu-link p{
+            width: 100%;
+        }
+        .sub-menu-link img{
+            width: 40px;
+            background: #e5e5e5;
+            border-radius: 50%;
+            padding: 8px;
+            margin-right: 15px ;
+        }
+        .sub-menu-link span{
+            font-size: 20px;
+            transition: transform 0.5s;
+        }
+        .sub-menu-link:hover span{
+            transform: translate(5px);
+        }
+        .sub-menu-link p:hover{
+            font-weight: 600;
+        }
+
+        /* test css */
+        .ccmiddle{
+            width: 100%;
+            height: auto;
+            min-height: 650px;
+            top: 107px;
+            color: rgba(0, 0, 0, 1);
+            border-top: 2px solid rgba(0, 0, 0, 1);
+            background-image: url("images/together.png");
+            width: 100%;
+            display: flex;
+            background-repeat: no-repeat;
+            background-position: left;
+            justify-content: right;
+            align-items: center;
+        }
+        .ccbuttons{
+            display: flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+        }
+        button{
+            background-color: #fff;
+            font-family: 'Fuzzy Bubbles', cursive;
+        }
+        .addcos{
+            border: 5px solid #7D99F9;  
+                width: 250px;
+                height: 55px;
+                flex-shrink: 0;
+                padding: 10px;
+                margin: 20px;
+                border-radius:25px;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+        }
+        .newcre{
+            border: 5px solid #7D99F9;  
+            width: 250px;
+                height: 55px;
+                flex-shrink: 0;
+                padding: 10px;
+                margin: 20px;
+                border-radius:25px;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+        }
+        .back-btn{
+            border: 5px solid #000000;  
+            width: 250px;
+                height: 55px;
+                flex-shrink: 0;
+                padding: 10px;
+                margin: 20px;
+                border-radius:25px;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/logo.png" class="logo">
+
+            <div class="mart-name">
+                Shop Name
+            </div>
+            <div class="circle">
+                <img src="images/profile.png" alt="vaibhv" class="user-pic" onclick="toggleMenu()">
+            </div>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <div class="circle">
+                                <img src="images/profile.png" alt="Vaibhav" class="user-pic">
+                            </div>
+                            <h3>Username</h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/profile.png" alt="">
+                            <p>Edit Profile</p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/setting.png" alt="">
+                            <p>Settings</p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/help.png" alt="">
+                            <p>Help</p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/logout.png" alt="">
+                            <p>Logout</p>
+                            <span> > </span>
+                        </a>
+                    </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="ccmiddle">
+        
+        <div class="ccbuttons">
+            <a href="yet-to-be-added">
+                <button class="addcos">Add Costomer</button>
+            </a>
+            <a href="yet-to-be-added">
+                <button class="newcre">New Credit</button>
+            </a>
+            <a href="index.html">
+                <button class="back-btn"> <- Back</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="middle-together">
+        <div class="ccbuttons">
+            <a href="#">
+                <button class="addcos">Add Costomer</button>
+            </a>
+            <a href="#">
+                <button class="newcre">New Credit</button>
+            </a>
+        </div>
+    </div> -->
+
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>
