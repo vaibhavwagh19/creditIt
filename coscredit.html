@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Costomer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
     <style>
         *{
             margin: 0;
@@ -21,7 +25,7 @@
         }
         .mart-name{
             margin: 5px;
-            color: #000000;
+            color: #2a2a2a;
             font-size: 25px;
             font-weight: 700;
         }
@@ -38,13 +42,15 @@
         }
         .logo{
             width: 15%;
-            min-width: 120px;
+            min-width: 140px;
             height: auto;
             mix-blend-mode: multiply;
         }
         .circle{
-            width: 60px;
-            height: 60px;
+            max-width: 50px;
+            width: auto;
+            max-height: 50px;
+            height: auto;
             border: 2px solid rgb(0, 0, 0);
             border-radius: 50%;
             overflow: hidden;
@@ -54,7 +60,6 @@
             border-radius: 50%;
             margin-left: 30px; */
             cursor: pointer;
-
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -102,7 +107,8 @@
             font-weight: 500;
         }
         .user-info img{
-            width: 60px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             margin-right: 15px;
         }
@@ -153,61 +159,62 @@
             width: 100%;
             display: flex;
             background-repeat: no-repeat;
-            background-position: left;
+            background-position: center;
             justify-content: right;
             align-items: center;
-        }
-        .ccbuttons{
-            display: flex;
-            flex-wrap:wrap;
-            flex-direction: column;
         }
         button{
             background-color: #fff;
             font-family: 'Fuzzy Bubbles', cursive;
         }
+        .ccbuttons{
+            display: flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+            margin-right: 50px;
+        }
         .addcos{
             border: 5px solid #7D99F9;  
-                width: 250px;
-                height: 55px;
+                width: 300px;
+                height: auto;
                 flex-shrink: 0;
                 padding: 10px;
                 margin: 20px;
-                border-radius:25px;
-                font-size: 18px;
+                border-radius:30px;
+                font-size: 30px;
                 text-transform: uppercase;
                 color: rgb(0, 0, 0);
                 cursor: pointer;
+                
         }
         .newcre{
             border: 5px solid #7D99F9;  
-            width: 250px;
-                height: 55px;
+            width: 300px;
+                height: auto;
                 flex-shrink: 0;
                 padding: 10px;
                 margin: 20px;
-                border-radius:25px;
-                font-size: 18px;
+                border-radius:30px;
+                font-size: 30px;
                 text-transform: uppercase;
                 color: rgb(0, 0, 0);
                 cursor: pointer;
         }
         .back-btn{
-            border: 5px solid #000000;  
-            width: 250px;
-                height: 55px;
+            border: 2px solid #000000;  
+                width: 150px;
+                height: auto;
                 flex-shrink: 0;
                 padding: 10px;
                 margin: 20px;
                 border-radius:25px;
-                font-size: 18px;
+                font-size: 27px;
                 text-transform: uppercase;
                 color: rgb(0, 0, 0);
                 cursor: pointer;
         }
 
 
-        
     </style>
 </head>
 <body>
@@ -266,7 +273,7 @@
                 <button class="newcre">New Credit</button>
             </a>
             <a href="index.html">
-                <button class="back-btn"> <- Back</button>
+                <button class="back-btn">Back</button>
             </a>
         </div>
     </div>
