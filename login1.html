@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fuzzy Bubbles', cursive;
+        }
+        /* .hero{
+            width: 100%;
+
+            background-image: url("images/together.png");
+            background-repeat: no-repeat;
+            align-items: center;
+            background-position: left;
+        } */
+        .mart-name{
+            margin: 5px;
+            color: #2a2a2a;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        nav{
+            background: #f2de7a;
+            width: 100%;
+            padding: 10px 2%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border: 2px solid black;
+        }
+        .logo{
+            width: 15%;
+            min-width: 140px;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+        .circle{
+            max-width: 50px;
+            width: auto;
+            max-height: 50px;
+            height: auto;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .user-pic{
+            /* width: 40px;
+            border-radius: 50%;
+            margin-left: 30px; */
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        nav ul{
+            width: 100%;
+            text-align: right;
+        }
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+        nav ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .sub-menu-wrap{
+            position: absolute;
+            top: 100%;
+            right: 3%;
+            width: 320px;
+            max-height:0px;
+            overflow: hidden;
+            transition: max-height ;
+        }
+        .sub-menu-wrap.open-menu{
+            max-height: 400px;
+            overflow: visible;
+        }
+        .sub-menu{
+            background: #fff;
+            padding: 20px;
+            margin:10px;
+            border-radius: 15px;
+            box-shadow:  0 0 50px #ccc ;
+            border: 1px solid #303030;
+        }
+        .user-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .user-info h3{
+            font-weight: 500;
+        }
+        .user-info img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .sub-menu hr{
+            border: 0;
+            height: 2px;
+            width: 100%;
+            background: #ccc;
+            margin: 15px 0 10px;
+        }
+        .sub-menu-link{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+        }
+        .sub-menu-link p{
+            width: 100%;
+        }
+        .sub-menu-link img{
+            width: 40px;
+            background: #e5e5e5;
+            border-radius: 50%;
+            padding: 8px;
+            margin-right: 15px ;
+        }
+        .sub-menu-link span{
+            font-size: 20px;
+            transition: transform 0.5s;
+        }
+        .sub-menu-link:hover span{
+            transform: translate(5px);
+        }
+        .sub-menu-link p:hover{
+            font-weight: 600;
+        }
+
+        /* middle content css */
+        /* .ccmiddle{
+            width: 100%;
+            height: auto;
+            min-height: 650px;
+            top: 107px;
+            color: rgba(0, 0, 0, 1);
+            border-top: 2px solid rgba(0, 0, 0, 1);
+            background-image: url("images/together.png");
+            width: 100%;
+            display: flex;
+            background-repeat: no-repeat;
+            background-position: center;
+            justify-content: right;
+            align-items: center;
+        }
+        button{
+            background-color: #fff;
+            font-family: 'Fuzzy Bubbles', cursive;
+        }
+        .ccbuttons{
+            display: flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+            margin-right: 50px;
+        }
+        .addcos{
+            border: 5px solid #7D99F9;  
+                width: 300px;
+                height: auto;
+                flex-shrink: 0;
+                padding: 10px;
+                margin: 20px;
+                border-radius:30px;
+                font-size: 30px;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+                
+        }
+        .newcre{
+            border: 5px solid #7D99F9;  
+            width: 300px;
+                height: auto;
+                flex-shrink: 0;
+                padding: 10px;
+                margin: 20px;
+                border-radius:30px;
+                font-size: 30px;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+        }
+        .back-btn{
+            border: 2px solid #000000;  
+                width: 150px;
+                height: auto;
+                flex-shrink: 0;
+                padding: 10px;
+                margin: 20px;
+                border-radius:25px;
+                font-size: 27px;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+        } */
+
+/* add your css here */
+
+        
+        .login-back{
+            width: 100%;
+            height: 100vh;
+            background: #ccc;
+            background-image: url("images/login_image.png");
+            display: flex;
+            background-position: center;
+            background-repeat: no-repeat;
+            align-items: center;
+            justify-content: left;
+            color: rgba(0, 0, 0, 1);
+            border-top: 2px solid rgba(0, 0, 0, 1);
+        }
+        /* .login-container{
+            width: 100%;
+
+            border: 3px solid black;
+            margin-left: 10px;
+            padding: 30px;
+            
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        } */
+
+        .login-container {
+            width: 30%;
+            min-width: 300px;
+            font-family: Arial black;   
+            font-size: 25px;
+            background:#808080;
+            padding: 50px;        
+            margin-left: 20px;
+            box-shadow: 0 15px 20px rgba(0,0,0,0.6);
+            border-radius: 10px;
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #808080;
+            background-color: #cccccc;
+            border-radius: 3px;
+        }
+
+        button {
+            
+            font-family: Arial Black;
+            font-size: 20px;
+            display: inline-block;
+            outline: 10px #00008b;
+            padding: 10px 80px;
+            border-radius: 20px; /* Set the border-radius property to create an oval shape */
+            background-color: #71ebf0;
+            color: #00008b;
+            text-decoration: none;
+            
+        }
+
+        button:hover {
+            background-color: #45ccd1;
+            color: #ffffff;            
+        }
+        /* ... Other CSS rules ... */
+        
+        /* .login-container {
+            background-color: #808080;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 8000px; 
+            margin: 0 auto; 
+            padding: 20px;
+            border: 1px solid #808080; 
+            width: 500px; 
+            height: 300px
+        } */
+
+        .login-container h1 {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #808080; /* Add a grey (light) bottom border to the h1 element */
+        }
+        /* .center-container 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh; This sets the container to fill the entire viewport height */
+
+        /* ... Other CSS rules ... */
+        .tilted-image-container {
+          display: inline-block;
+          transform: rotate(0deg); /* Adjust the degree (15deg in this example) to change the tilt angle */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation bar -->
+
+    <div class="hero">
+        <nav>
+            <img src="images/logo.png" class="logo">
+
+            <div class="mart-name">
+                Shop Name
+            </div>
+            <div class="circle">
+                <img src="images/profile.png" alt="vaibhv" class="user-pic" onclick="toggleMenu()">
+            </div>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <div class="circle">
+                                <img src="images/profile.png" alt="Vaibhav" class="user-pic">
+                            </div>
+                            <h3>Username</h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/profile.png" alt="">
+                            <p>Edit Profile</p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/setting.png" alt="">
+                            <p>Settings</p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/help.png" alt="">
+                            <p>Help</p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/logout.png" alt="">
+                            <p>Logout</p>
+                            <span> > </span>
+                        </a>
+                    </div>
+            </div>
+        </nav>
+    </div>
+
+
+<!-- Place your content here -->
+
+    <div class="login-back">
+        
+        <!-- <div class="login-container">
+            <div class="input-box">
+                <label for="email">Email Address</label>
+                <input type="email" placeholder="✉️ Enter Your Valid Email Address" name="email" required>
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" minlength="8" id="password" placeholder="🔒 Enter New Password" name="password" autocomplete="off" required>
+            </div>
+        </div> -->
+
+        <!-- put your login here -->
+        <div class="login-container">
+            <h1>Login</h1>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+    
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+    
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+<!-- js used in nav -->
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+
+// put your js here
+
+
+    </script>
+</body>
+</html>
