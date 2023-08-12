@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing file</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="">
+    <style>
+        *{              
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fuzzy Bubbles', cursive;
+        }
+        
+        .mart-name{
+            margin: 5px;
+            color: #2a2a2a;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        nav{
+            background: #f2de7a;
+            width: 100%;
+            padding: 10px 2%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border: 2px solid black;
+        }
+        .logo{
+            width: 15%;
+            min-width: 140px;
+            height: auto;
+            mix-blend-mode: multiply;
+            
+        }
+        .circle{
+            max-width: 50px;
+            width: auto;
+            max-height: 50px;
+            height: auto;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .user-pic{
+            /* width: 40px;
+            border-radius: 50%;
+            margin-left: 30px; */
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        nav ul{
+            width: 100%;
+            text-align: right;
+        }
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+        nav ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .sub-menu-wrap{
+            position: absolute;
+            top: 100%;
+            right: 3%;
+            width: 320px;
+            max-height:0px;
+            overflow: hidden;
+            transition: max-height ;
+        }
+        .sub-menu-wrap.open-menu{
+            max-height: 400px;
+            overflow: visible;
+        }
+        .sub-menu{
+            background: #fff;
+            padding: 20px;
+            margin:10px;
+            border-radius: 15px;
+            box-shadow:  0 0 50px #828282;
+            border: 1px solid #303030;
+        }
+        .user-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .user-info h3{
+            font-weight: 500;
+        }
+        .user-info img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .sub-menu hr{
+            border: 0;
+            height: 2px;
+            width: 100%;
+            background: #ccc;
+            margin: 15px 0 10px;
+        }
+        .sub-menu-link{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+        }
+        .sub-menu-link p{
+            width: 100%;
+        }
+        .sub-menu-link img{
+            width: 40px;
+            background: #e5e5e5;
+            border-radius: 50%;
+            padding: 8px;
+            margin-right: 15px ;
+        }
+        .sub-menu-link span{
+            font-size: 20px;
+            transition: transform 0.5s;
+        }
+        .sub-menu-link:hover span{
+            transform: translate(5px);
+        }
+        .sub-menu-link p:hover{
+            font-weight: 600;
+        }
+        #logo{
+            cursor: pointer;
+        }
+
+        
+/* add your css here */
+
+    body{
+        background-color: rgba(213, 5, 5, 0.78);
+    }      
+    .close-alignment{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .btn-close{
+        background-color: transparent;
+        margin-right: 33px;
+        padding: 1px;
+        font-size: 70px;
+        border: none;
+        height:80px;
+        width: 80px;
+        border-radius: 10px;
+        text-decoration: none;
+    }  
+    .btn-close:hover {
+        background-color: hsl(0, 5%, 82%);
+        color: hsl(0, 0%, 4%);
+        cursor: pointer;
+    }
+    .box{
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .table-me{
+        width: 100%;
+        text-align: center;
+        max-width: 1174px;
+        margin: 10px;
+    }
+    
+    table, th, td {
+        font-size: 20px;
+        border: 3px solid rgba(213, 5, 5, 0.78);
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+        background-color: #ffffff;
+        text-align: center;
+    }
+    .delete-opt:hover{
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation bar -->
+
+    <div>
+        <nav>
+            <img id="logo" src="images/logo.png" class="logo">
+
+            <div class="mart-name">
+                Shop Name
+            </div>
+            <div class="circle">
+                <img src="images/profile.png" alt="vaibhv" class="user-pic" onclick="toggleMenu()">
+            </div>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <div class="circle">
+                            <img src="images/profile.png" alt="Vaibhav" class="user-pic">
+                        </div>
+                        <h3>Username</h3>
+                    </div>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/profile.png" alt="">
+                        <p>Update Profile</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/setting.png" alt="">
+                        <p>Settings</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/help.png" alt="">
+                        <p>Help</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/logout.png" alt="">
+                        <p>Logout</p>
+                        <span> > </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+<!--vbh Place your content here -->
+    <div class="close-alignment">
+        <a href="yet-to-be-added">
+            <button class="btn-close" type="close">&times;</button>
+        </a>
+    </div>
+    <div class="box">
+        <table class="table table-me" >
+                    
+            <tr class="headings" >
+                <th>S.N</th>
+                <th>Amount Paid</th>
+                <th>Time</th>
+                <th>Last Purchase</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>320</th>
+                <th>02:02:02:am</th>
+                <th>12/08/2023</th>
+                <th><a href="delete-data"><abbr title="Delete Data"><i class="fa-solid fa-trash delete-opt" style="color: #ff2e2e;"></i></abbr></a></th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>420</th>
+                <th>02:02:02:am</th>
+                <th>12/08/2023</th>
+                <th><a href="delete-data"><abbr title="Delete Data"><i class="fa-solid fa-trash delete-opt" style="color: #ff2e2e;"></i></abbr></a></th>
+            </tr>
+        </table>
+    </div>
+    
+
+<!-- js used in nav -->
+    <script>
+        let subMenu = document.getElementById("subMenu");
+            function toggleMenu(){
+                subMenu.classList.toggle("open-menu");
+            }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let logoElement = document.getElementById("logo");
+            logoElement.addEventListener("click", function() {
+                window.location.href = "home.html"; // Change the URL to desired destination
+            });
+        });
+
+// Add your js here
+    
+
+
+    </script>
+</body>
+</html>

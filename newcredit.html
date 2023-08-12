@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Credit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link rel="stylesheet" href="newcredit.css">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <h1>New Credit</h1>
+
+    <!-- HTML -->
+</head>
+
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/logo.png" class="logo">
+
+            <div class="mart-name">
+                Shop Name
+            </div>
+            <div class="circle">
+                <img src="images/profile.png" alt="vaibhav" class="user-pic" onclick="toggleMenu()">
+            </div>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <div class="circle">
+                            <img src="profile.png" alt="Vaibhav" class="user-pic">
+                        </div>
+                        <h3>Username</h3>
+                    </div>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/profile.png" alt="">
+                        <p>Edit Profile</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/setting.png" alt="">
+                        <p>Settings</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/help.png" alt="">
+                        <p>Help</p>
+                        <span> > </span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/logout.png" alt="">
+                        <p>Logout</p>
+                        <span> > </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="center-container">
+            <div class="login-container">
+                <div class="mb-3">
+                    <label for="disabledSelect" class="form-label"></label>
+                    <select id="disabledSelect" class="form-select">
+                        <option>--SELECT Customer--</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Items</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <label for="password">Total Amount</label>
+                <input type="number" id="Amount" required>
+
+                <input class="btn btn-primary" type="submit" value="ADD Credit">
+
+                </form>
+
+                <a href="home.html">
+                    <button class="back-button" type="close">&times;</button>
+                </a>
+
+
+                </form>
+                <!-- Javascript -->
+                <script>
+                    let subMenu = document.getElementById("subMenu");
+                    function toggleMenu() {
+                        subMenu.classList.toggle("open-menu");
+                    }
+
+                </script>
+
+</body>
+
+</html>
